@@ -2,6 +2,7 @@
 import BreezeAuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import BreezeInput from '@/Components/Input.vue';
+import MySelect from '@/Components/Select.vue';
 import BreezeTextArea from '@/Components/Textarea.vue';
 import InputError from '@/Components/InputError.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
@@ -9,6 +10,10 @@ import { onMounted } from "vue";
 import { Datepicker, Input, initTE, Select } from "tw-elements";
 
 onMounted(() => {
+    const myDatepicker = new Select(
+        document.getElementById("account-type")
+
+    );
     initTE({ Datepicker, Input, Select });
 });
 
@@ -65,8 +70,15 @@ const submit = () => {
                             </div>
                             <div className="flex flex-col">
                                 <div className="relative mb-4">
-                                    <select data-te-select-init data-te-select-filter="true" data-te-select-size="lg"
-                                        v-model="form.accountType" name="accountType" id="accountType">
+
+                                    <!-- <MySelect v-bind:data-te-select-init="true" v-bind:data-te-select-filter="true"></MySelect>
+                                    <select data-te-select-init data-te-select-filter="true" data-te-select-size="lg">
+                                        <option value="option1">Option 1</option>
+                                        <option value="option2">Option 2</option>
+                                     
+                                    </select> -->
+                                    <select id="account-type" data-te-select-init data-te-select-filter="true"
+                                        data-te-select-size="lg" v-model="form.accountType" name="accountType">
                                         <option value=""></option>
                                         <option v-for="accountType in accountTypes" v-bind:value="accountType.id"
                                             v-bind:key="accountType.id">

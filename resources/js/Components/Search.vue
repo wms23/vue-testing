@@ -11,12 +11,11 @@ import { Link } from '@inertiajs/vue3';
             <BreezeInput id="search" type="text" class="ml-2 py-1 text-sm rounded border text-black" v-model="search_param"
                 @keyup="search" autofocus />
         </div>
-        <div class="flex space-x-2 items-center" v-if="can.create">
+        <div class="flex space-x-2 items-center">
             <Link class="px-4 py-2 bg-green-500 uppercase text-white rounded focus:outline-none flex items-center" type="button" as="button" :href="create" v-if="can.create" >
-            <jet-button type="button">
-                <font-awesome-icon icon="plus" size="md" rotation="rotate"></font-awesome-icon>
+            <button type="button">
                 Create
-            </jet-button>
+            </button>
             </Link>
         </div>
     </div>
@@ -26,7 +25,7 @@ import { Link } from '@inertiajs/vue3';
 export default {
     name: "CardHeader",
     props: {
-        create: Boolean,
+        create: String,
         searchMethod: Function,
         can: {
             type: Object,

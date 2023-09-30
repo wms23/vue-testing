@@ -48,4 +48,11 @@ Route::group([
     Route::resource('permission', 'PermissionController');
     Route::resource('account-type', 'AccountTypeController');
     Route::resource('account', 'AccountController');
+    Route::resource('business', 'BusinessController');
+    Route::resource('transaction', 'TransactionController');
+    
 });
+
+Route::get('/cashbook', function () {
+    return Inertia::render('Cashbook');
+})->middleware(['auth', 'verified'])->name('cashbook');

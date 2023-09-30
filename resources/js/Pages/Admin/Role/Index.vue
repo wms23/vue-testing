@@ -57,12 +57,12 @@ const props = defineProps({
                                     class="py-4 px-6"
                                 >
                                     <div type="justify-start lg:justify-end" no-wrap>
-                                        <BreezeButton class="ml-4 bg-green-500 px-2 py-1 rounded text-white cursor-pointer" v-if="can.edit">
+                                        <button class="ml-4 bg-green-500 px-2 py-1 rounded text-white cursor-pointer" v-if="can.edit">
                                             Edit
-                                        </BreezeButton>
-                                        <BreezeButton class="ml-4 bg-red-500 px-2 py-1 rounded text-white cursor-pointer" v-if="can.delete">
+                                        </button>
+                                        <button class="ml-4 bg-red-500 px-2 py-1 rounded text-white cursor-pointer" v-if="can.delete">
                                             Delete
-                                        </BreezeButton>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
